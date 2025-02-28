@@ -1,0 +1,50 @@
+<html>
+<head>
+    <meta http-equiv="refresh" content="6000;../../index.html" charset="UTF-16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>student list</title>
+</head>
+<body>
+<center><br><br/>
+<mark>CAMELIYA CREATION</mark><hr/><br><br/>
+<h1>student list</h1><hr/><br>
+<fieldset>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="eqc.html">downlord</a>  </li><hr/><br>
+<li> <img src="#" alt="lodding..."/><br>demo name <br>mobile number  <a href="#">downlord</a>  </li></hr></center></fieldset>
+</body>
+ <button id="logout-btn">Logout</button>
+ <script>
+     // Logout functionality
+     document.getElementById('logout-btn').addEventListener('click', () => {
+         localStorage.removeItem('loggedInUser');
+         window.location.href = '../../index.html';
+     });
+     
+     // Check if user has access to current page
+     const currentPage = window.location.pathname;
+     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+     if (loggedInUser && !loggedInUser.pages.includes(currentPage)) {
+         window.href = 'index.html';
+     };
+ </script>
+</html>

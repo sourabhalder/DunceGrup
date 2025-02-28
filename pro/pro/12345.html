@@ -1,0 +1,50 @@
+<html>
+  <head> 
+  <meta http-equiv="refresh" content="250;../../index.html" charset="UTF-16"/>
+  </head>
+  <body bgcolor="gray"><center>
+  <br><h1><mark>Rating by You!</mark></h1><br>
+    <h2>Email id :</h2>
+    <input type="email" placeholder="email" id="email" required/>
+    <br />
+   <h2> Your Rating :</h2>
+    <select id="vote" required>
+      <option value="Option1">5Star Rating</option>
+      <option value="Option2">4Star Rating</option>
+      <option value="Option3">3Star Rating</option>
+	  <option value="Option4">2Star Rating</option>
+      <option value="Option5">1Star Rating</option>
+    </select>
+    <br />
+    <button onclick="submitVote()">Vote!</button>
+
+    <h2>Results :</h2>
+    <p>5star Rating : <span id="option1Count">0</span> votes</p>
+    <p>4Star Rating : <span id="option2Count">0</span> votes</p>
+    <p>3star Rating : <span id="option3Count">0</span> votes</p>
+    <p>2star Rating : <span id="option4Count">0</span> votes</p>
+    <p>1star Rating: <span id="option5Count">0</span> votes</p>
+    
+    <!-- Option 3 is for later -->
+</center>
+    <script src="scripts.js">
+     
+    </script>
+	<br><br/><b>Update loding...</b>
+  </body>
+   <button id="logout-btn">Go Back to Home</button>
+ <script>
+     // Logout functionality
+     document.getElementById('logout-btn').addEventListener('click', () => {
+         localStorage.removeItem('loggedInUser');
+         window.location.href = '../../index.html';
+     });
+     
+     // Check if user has access to current page
+     const currentPage = window.location.pathname;
+     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+     if (loggedInUser && !loggedInUser.pages.includes(currentPage)) {
+         window.href = '../index.html';
+     };
+ </script>
+</html>

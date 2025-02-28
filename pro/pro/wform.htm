@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="6000;../../index.html" charset="UTF-16"/>
+    <title>Mony Add Ac</title>
+    <link rel="stylesheet" href="#">
+</head>
+<body bgcolor="teal"> <fieldset> <center> <b>
+    <h1> New Add Mony Your Account <table> <tr> <td><hr />
+    <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+    <div> <label>Full Name</label> <label class="validation-error hide" id="fullNameValidationError">*</label>
+                        <input type="text" name="fullName" id="fullName"> </div> <div>
+                        <label>add Mony</label>
+                        <input type="tel" name="empCode" id="empCode"> </div> <div>
+                        <label>Ac No</label>
+                        <input type="tel" name="salary" id="salary" required> </div> <div>
+                        <label>number</label>
+                        <input type="tel" name="city" id="city"required> </div>
+                    <div  class="form-action-buttons">
+ <input type="submit" value="Submit" onclick="alert('Plz Wait & Chack Your Acount For Add Mony in latus Updated for 1day')">
+                    </div> </form> </td> <td>
+                <table class="list" id="employeeList">
+ <thead> <tr>     <th>Full Name</th> <th>Add Mony</th>  <th>Ac No</th> <th>Your number</th> <th></th> </tr> </thead> <tbody> </tbody> </table> </td> </tr> </table></h1></b> </center> </fieldset>
+    <script>
+        var selectedRow = null
+function onFormSubmit() {
+    if (validate()) {
+        var formData = readFormData();
+        if (selectedRow == null)
+            insertNewRecord(formData);
+        else
+            updateRecord(formData); resetForm(); } }
+function readFormData() {
+    var formData = {};
+    formData["fullName"] = document.getElementById("fullName").value;
+    formData["empCode"] = document.getElementById("empCode").value;
+    formData["salary"] = document.getElementById("salary").value;
+    formData["city"] = document.getElementById("city").value;
+    return formData;}
+function insertNewRecord(data) {
+    var table = document.getElementById("employeeList").getElementsByTagName('tbody')[0];
+    var newRow = table.insertRow(table.length);
+    cell1 = newRow.insertCell(0);
+    cell1.innerHTML = data.fullName;
+    cell2 = newRow.insertCell(1);
+    cell2.innerHTML = data.empCode;
+    cell3 = newRow.insertCell(2);
+    cell3.innerHTML = data.salary;
+    cell4 = newRow.insertCell(3);
+    cell4.innerHTML = data.city;
+    cell4 = newRow.insertCell(4);
+    cell4.innerHTML = `<a onClick="onEdit(this)">Edit</a>
+                       <a onClick="onDelete(this)">Delete</a>`;}
+function resetForm() {
+    document.getElementById("fullName").value = "";
+    document.getElementById("empCode").value = "";
+    document.getElementById("salary").value = "";
+    document.getElementById("city").value = "";
+    selectedRow = null;}
+function onEdit(td) {
+    selectedRow = td.parentElement.parentElement;
+    document.getElementById("fullName").value = selectedRow.cells[0].innerHTML;
+    document.getElementById("empCode").value = selectedRow.cells[1].innerHTML;
+    document.getElementById("salary").value = selectedRow.cells[2].innerHTML;
+    document.getElementById("city").value = selectedRow.cells[3].innerHTML;}
+function updateRecord(formData)
+{   selectedRow.cells[0].innerHTML = formData.fullName;
+    selectedRow.cells[1].innerHTML = formData.empCode;
+    selectedRow.cells[2].innerHTML = formData.salary;
+    selectedRow.cells[3].innerHTML = formData.city;}
+function onDelete(td) {
+    if (confirm('Are you sure to delete this record ?')) {
+        row = td.parentElement.parentElement;
+        document.getElementById("employeeList").deleteRow(row.rowIndex);
+        resetForm(); }}
+function validate() {
+    isValid = true;
+    if (document.getElementById("fullName").value == "") {
+        isValid = false;
+        document.getElementById("fullNameValidationError").classList.remove("hide");  } else {
+        isValid = true;
+        if (!document.getElementById("fullNameValidationError").classList.contains("hide"))
+            document.getElementById("fullNameValidationError").classList.add("hide"); }
+    return isValid; }
+    </script>
+</body>
+
+ <button id="logout-btn">Logout</button>
+ <script>
+     // Logout functionality
+     document.getElementById('logout-btn').addEventListener('click', () => {
+         localStorage.removeItem('loggedInUser');
+         window.location.href = '../../index.html';
+     });
+     
+     // Check if user has access to current page
+     const currentPage = window.location.pathname;
+     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+     if (loggedInUser && !loggedInUser.pages.includes(currentPage)) {
+         window.href = '../../index.html';
+     };
+ </script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="600;../../index.html" charset="UTF-16"/>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Certificate Generator</title>
+</head>
+<body>
+     <button id="logout-btn">Logout</button>
+ <script>
+     // Logout functionality
+     document.getElementById('logout-btn').addEventListener('click', () => {
+         localStorage.removeItem('loggedInUser');
+         window.location.href = '../../index.html';
+     });
+     
+     // Check if user has access to current page
+     const currentPage = window.location.pathname;
+     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+     if (loggedInUser && !loggedInUser.pages.includes(currentPage)) {
+         window.href = '../../index.html';
+     };
+ </script>
+        
+    <div class="container">
+        <h1>Certificate Generator</h1>
+        <label>
+            Name:
+            <input id="name" type='text'>
+        </label>
+        <a href="#" id="download-btn">Download</a>
+        <canvas id="canvas" height="350px" width="500px"></canvas>
+    </div>
+    <script src="script.js">		</script>
+</body>
+
+</html>

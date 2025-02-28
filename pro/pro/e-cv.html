@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-16">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="600;../../index.html" charset="UTF-16"/>
+    <title>Certificate Creator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+ <button id="logout-btn">Logout</button>
+ <script>
+     // Logout functionality
+     document.getElementById('logout-btn').addEventListener('click', () => {
+         localStorage.removeItem('loggedInUser');
+         window.location.href = '../../index.html';
+     });
+     
+     // Check if user has access to current page
+     const currentPage = window.location.pathname;
+     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+     if (loggedInUser && !loggedInUser.pages.includes(currentPage)) {
+         window.href = '../../index.html';
+     };
+ </script>
+<body id="body">
+    <div id="cform">
+
+
+        <div id="chform">
+            <h1 style="text-align: center; margin-top: 20px;">Certificate</h1>
+            <br>
+            <p style="text-align: left; font-size: large; font-weight: bolder; width: 100%; margin-left: 20px;">Enter
+                Your Name*</p>
+            <input type="text" id="fname" name="username" required="" placeholder="Enter Your Name...."/>
+            <p style="text-align: left; font-size: large; font-weight: bolder; width: 100%; margin-left: 20px;">Enter
+                Certificate Details*</p>
+            <input type="text" id="fdetails" name="userdetails" placeholder="Enter Your Certificate Details...." />
+            <p style="text-align: left; font-size: large; font-weight: bolder; width: 100%; margin-left: 20px;"> Enter
+                your Number*</p>
+            <input type="number" id="forganisername" name="organisername" required=""
+                placeholder="Enter Your Certificate Organiser Name...." />
+            <br>
+            <br>
+            <button id="bcertificate" onclick="check()">Generate E-Certificate</button>
+           
+            <button  id="downloaddata" onclick="dcheck()">Download E-Certificate</button>
+        </div>
+
+    </div>
+
+
+    <div id="main">
+        <div id="child1">
+            <img src="0.jpeg" alt="logo" class="img1">
+           <h2 id="img2">CAMELIYA CREATION</h2>
+            <div class="body">
+                location: Aranghata, Nodia
+            </div>
+            <div class="body2">
+               Certificate Of Participation
+            </div><br/><hr>
+            <h3 id="name" align="center"></h3><hr>
+            <hr size="bolder" />
+            <p align="center" style="font-weight: bold; font-size: large;"> For Successfully Completing </p>
+            <h4 class="details" style="text-transform: capitalize; text-align: center;"></h4>
+            <p align="center" style="font-size: larger; font-weight: bold;">We Acknowledge Your Efforts . Keep
+                Participating !</p>
+            <h5 class="organisername" style="text-align: center; font-weight: bolder; text-transform: capitalize;">
+            </h5>
+
+        </div>
+    </div>
+   
+</body>
+</html>

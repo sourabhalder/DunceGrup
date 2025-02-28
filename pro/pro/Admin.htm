@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>Login User</title>
+	<link rel="stylesheet" type="text/css" href="#">
+	<meta http-equiv="refresh" content="600;../../index.html" charset="UTF-16"/>
+</head>
+<body style="color: Orange; background-color:silver; font-size:200%;"><center><fieldset>
+ <br><h1>Login To Student</h1>
+ <form name="login" onsubmit="return validateForm() ;" method="post">
+<br>
+ Username: <input class="username" type="text" name="username" style="height:6%; font-size: 100%;"><br/>
+ Password: <input class="password" type="password" name="password" style="height: 6%; font-size:100%;">
+<br></br>
+<input type="button" class="submit" value="Log In" name="submit" onclick="validate()" style="height: 6%; width:60%;">
+</form>
+</fieldset><center>
+<script src="user.js"></script>
+</body>
+ <button id="logout-btn">Go Back to Home</button>
+ <script>
+     // Logout functionality
+     document.getElementById('logout-btn').addEventListener('click', () => {
+         localStorage.removeItem('loggedInUser');
+         window.location.href = '../../index.html';
+     });
+     
+     // Check if user has access to current page
+     const currentPage = window.location.pathname;
+     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+     if (loggedInUser && !loggedInUser.pages.includes(currentPage)) {
+         window.href = '../../index.html';
+     };
+ </script>
+</html> 

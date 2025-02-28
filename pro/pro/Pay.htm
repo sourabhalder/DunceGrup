@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="6000;../../index.html" charset="UTF-16"/>
+    <title>Online Payment</title>
+	<script>
+			window.addEventListener("online",function(){
+				document.getElementById('status').innerHTML='You are Online';	});
+			window.addEventListener("offline",function(){
+				document.getElementById('status').innerHTML='You are Offline';	});
+		</script> 
+</head>
+<body> <center> <b> <div id="status">You are Online</div> </b>
+      <fieldset> <mark>
+ Paypal and DavidCard PayNow ~</mark>
+<div id="smart-button-container">
+    <div style="text-align: center;">
+        <div id="paypal-button-container"> </div> </div>
+</div> </center>
+<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory" alt="inter net slow"> </script>
+<script>
+    function initPayPalButton() {
+        paypal.Buttons({
+            style: {
+                shape: 'pill',
+                color: 'silver',
+                layout: 'vertical',
+                label: 'paypal',  },
+            createOrder: function(data, actions) {
+            return actions.order.create({
+            purchase_units: [{ "description": "Sh - 01", "amount": { "currency_code": "USD", "value": 20 } }] }); },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name + '!'); }); },
+            onError: function(err) {
+                console.log(err); }
+        }).render('#paypal-button-container'); }
+    initPayPalButton();
+</script>
+
+<center> <br> </br>
+<mark>Upi/Paytm Payway Qr.code~~~~</mark> <hr/>
+<img src="https://gdurl.com/3OsX" alt="Massege for Customer This Pay_Code Exp - 30Nov.2021. in Upi Payment Ways Plz Pay to our Paypal and Davedcard Way" style="width: 100%; height: 100%;" onerror="Flow UPI ID"> </img>
+<br> </br> <hr> UPI ID :<br> 8513001304@paytm.com <hr><br>
+***Send Your Transfor id on Your Ticher
+<address>
+<fieldset><mark>Help Line</mark> <br> </br>
+Contack us for Our Webdevoloper <a href="http://sourabhalder.eu.org">sourabhalder</a> </address> </center> </fieldset> </body> </fildset>
+
+
+ <button id="logout-btn">Go Back to Home</button>
+ <script>
+     // Logout functionality
+     document.getElementById('logout-btn').addEventListener('click', () => {
+         localStorage.removeItem('loggedInUser');
+         window.location.href = '../../index.html';
+     });
+     
+     // Check if user has access to current page
+     const currentPage = window.location.pathname;
+     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+     if (loggedInUser && !loggedInUser.pages.includes(currentPage)) {
+         window.href = 'index.html';
+     };
+ </script>
+</html>

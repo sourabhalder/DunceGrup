@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<meta http-equiv="refresh" content="6000;../../index.html" charset="UTF-16"/>
+<style>
+* {box-sizing: border-box;}
+body {background:url(../); color:teal;
+    background-color:#FF00007D; }
+input {padding:20px; width:100%; font-size:40px; color:blue;}
+input.invalid {background-color: red;}
+button{color:red; background-color:black;  width:200px; height:60px;}
+.tab {display: none;}
+</style>
+<meta http-equiv="refresh" charset="UTF-8/16" content="600" name ="viewport"/>
+	 <title>E-Certificked</title>
+<link rel="sicon" href="Certificate99.jpg" type="img/jpg" />
+
+<body> <center>
+<a href="http://sourabhalder.eu.org/m?=2/" target="blank" style= "position:fixed; opacity:21%; width:50px; height:40px; bottom:40px; left:90px; text-overflow: teal; text-decoration: none;">PowedBy~  SourabHalder</a> 
+<form id="regForm" action="#" method="post"><fieldset>
+  <h1>E-Quiz Info</h1><hr></hr>
+  <div class="tab">Register Contact login:
+ <br></br> <input type="email" placeholder="E-mail name..." oninput="this.className = ''" name="email"> <br></br>
+  <input type="tel" placeholder="Phone number..." oninput="this.className = ''" name="phone"></div>
+   <div class="tab"><b>Qize Ancer Now :  10Quition<br></br><hr></hr>
+  <mark>1. বার্ষিক ডান্স পোগ্রাম কি ?
+  <input type="text"><hr>
+  2.ভরতনাট্যম হল ভারতের প্রথম ধ্রুপদী নৃত্যচর্চা- হা/না !
+  <input type="text"><hr>
+  3.Bhojpuri vs Varatnattam - কোনটি সামাজিক অনুষ্টানে হয় !
+  <input type="text"><hr>
+  4.একটি ভারতনাট্টাম এর উদাহরণ হল......।
+  <input type="text"><hr>
+  5.পুরো নাম লিখো - Dunce
+  <input type="text"><hr>
+  6.কাচুপুরী আর কত্বপনাচ একই - ঠিক/ভুল ।
+  <input type="text"><hr>
+  7.গ্রুপ ডান্স এর সবাই কে একসাথে মিলে মিশে কাজ করতে হয় - ঠিক/ভুল ।
+  <input type="text"><hr>
+  8.সুস্মিতা সেন কত সালে আওয়ার্ড পেয়ে ছিলে_2008/2015/2021/
+  <input type="text"><hr>
+  9.শেষ ফ্লিমফিয়ার আওয়ার্ড - কত সালে হয়ে ছিল !
+  <input type="text"><hr>
+  10.মিস সুন্দরী আওয়ার্ড ভারতে মোট কত জন পেয়েছে - 3/4/5 </mark>
+  <input type="text"><hr></div>
+  </div> <br/></b>
+  <div style="overflow:auto;">
+    <div style="float:right;">
+  <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+  <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+    </div> </div>
+ <div> <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span> </div> 
+  
+  
+  <div class="tab">
+<div class="container"><fieldset><center>
+  <h1>E-Quize Certificate</h1>
+  <mark>Full Free of Cost Enternet Quize With Certified Available on this platform</mark><hr></hr><h2>&nbsp;
+  <label>Student Name:</h2>&nbsp;
+  <input id="name" type='text' placeholder="Your Full Name Type..." required pattern="[A_Z a_z] [ ] [A_Z a_z]" style="width:100%;height:100px;border:4px solid;font-size:40px;color:orange;" list="op"/>
+  <datalist id="op"> <option value="Sri, "/><option value="Sir, "/><option value="Mr, "/><option value="Mrs, "/> </datalist>
+  </label><br></br>~📲💻🖥~<br>️</br>
+  <a href="#" id="download-btn" style="text-decoration:none;color:Red;font-size:28px;">Download click Now Heir</a><hr></hr>live prof<fieldset>
+  <canvas id="canvas" height="350px" width="500px"> </canvas></div><progress/>
+  </div></fieldset>
+  <script>
+  const canvas = document.getElementById('canvas')
+const ctx = canvas.getContext('2d')
+const nameInput = document.getElementById('name')
+const downloadBtn = document.getElementById('download-btn')
+const image = new Image()
+image.src = 'Certificate99.jpg'
+image.onload = function () {drawImage()}
+function drawImage() {
+	// ctx.clearRect(0, 0, canvas.width, canvas.height)
+	ctx.drawImage(image, 0, 0, canvas.width, canvas.height)
+	ctx.font = '28px monotype corsiva'
+	ctx.fillStyle = 'darkred'
+	ctx.fillText(nameInput.value, 40, 180)}
+nameInput.addEventListener('input', function () {	drawImage() })
+downloadBtn.addEventListener('click', function () {
+	downloadBtn.href = canvas.toDataURL('image/jpg')
+	downloadBtn.download = 'Certificate - ' + nameInput.value });
+    </script></fieldset></center>
+</div> </form></fieldset><script>
+var currentTab = 0;
+showTab(currentTab);
+function showTab(n) {
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline"; }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "Submit"; } else {
+    document.getElementById("nextBtn").innerHTML = "Next"; }
+  fixStepIndicator(n)}
+function nextPrev(n) {
+  var x = document.getElementsByClassName("tab");
+  if (n == 1 && !validateForm()) return false;
+  x[currentTab].style.display = "none";
+  currentTab = currentTab + n;
+  if (currentTab >= x.length) {
+    document.getElementById("regForm").submit(); return false; }
+  showTab(currentTab);}
+function validateForm() {
+  var x, y, i, valid = true;
+x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  for (i = 0; i < y.length; i++) {
+    if (y[i].value == "") {
+      y[i].className += " invalid";
+      valid = false; } } if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";} return valid;}
+function fixStepIndicator(n) {
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");}
+  x[n].className += " active";}
+</script> </center>
+</body> 
+ <button id="logout-btn">Logout</button>
+ <script>
+     // Logout functionality
+     document.getElementById('logout-btn').addEventListener('click', () => {
+         localStorage.removeItem('loggedInUser');
+         window.location.href = '../../index.html';
+     });
+     
+     // Check if user has access to current page
+     const currentPage = window.location.pathname;
+     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+     if (loggedInUser && !loggedInUser.pages.includes(currentPage)) {
+         window.href = '../../index.html';
+     };
+ </script>
+</html>

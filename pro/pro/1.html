@@ -1,0 +1,55 @@
+<html>
+<title> </title>
+	<meta http-equiv="refresh" content="6000;../../index.html" charset="UTF-16"/>
+<head></head>
+<body>
+<p>CAMELIYA CREATION</p>
+<fieldset><details open><summary>Manu</summary><hr/>
+<details block><summary>WebSite</summary>
+<a href="#">E-Certificket</a><br />
+<a href="#">Genaral Knowledge</a><br />
+<a href="#">id card</a><br />
+<a href="#">Dunce E-Qize</a><br />
+<a href="#">India Dunce Acadamy basic</a><br />
+<a href="#">outher coming soon</a><br />
+</details><hr/>
+<details close><summary>login</summary>
+<a href="#">Join & admisson</a><br />
+<a href="Admin.htm">User login</a><br />
+<a href="#">Monthly pay</a><br />
+<a href="https://sourabhalder.eu.org">Admin</a><br />
+<a href="#">Contact Number</a>
+</details><hr/>
+<details><summary>Home</summary>
+<a href="#">Video Gallery</a><br />
+<a href="#">photo Gallery</a><br />
+<a href="#">RAting of Site</a><br />
+<a href="https://paypal.me/sourabhalder">Help</a><br />
+ <a href="#">Complent</a>
+</details><hr/>
+<details><summary>Helpline</summary>
+<a href="https://bit.ly/">Insta Id</a><br />
+<a href="http://bit.ly/">Facebook Page</a><br/>
+<a href="https://x.com/">tweeter</a><br />
+<a href="https://youtube.com/">youtube</a><br />
+<a href ="http://">location</a><br />
+<a href =" https://bit.ly/">Facebook Grup</a></details></details></fieldset>
+</body>
+
+
+ <button id="logout-btn">Logout</button>
+ <script>
+     // Logout functionality
+     document.getElementById('logout-btn').addEventListener('click', () => {
+         localStorage.removeItem('loggedInUser');
+         window.location.href = '../../index.html';
+     });
+     
+     // Check if user has access to current page
+     const currentPage = window.location.pathname;
+     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+     if (loggedInUser && !loggedInUser.pages.includes(currentPage)) {
+         window.href = '../../index.html';
+     };
+ </script>
+ </html>

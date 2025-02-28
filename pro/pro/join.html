@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head><meta http-equiv="refresh" content="6000;../../index.html" charset="UTF-16"/>
+        <title>Admisson New</title>
+    </head>
+<body>
+<h1>Join Document & admisson your contack doument submit</h1><hr>
+<h2>form submit after Send e-mail than fainal submit</h2>
+<hr>
+<form action="mailto:sourab.halder.in@gmail.com" method="post" enctype="text/plain">
+Name:<br>
+<input type="text" name="name"><br>
+E-mail:<br>
+<input type="text" name="mail"><br>
+Number:<br>
+<input type="text" name="comment" size="50"><br><br>
+<input type="submit" value="Send">
+<input type="reset" value="Reset">
+</form>
+<hr>
+
+ <button id="logout-btn">Go Back to Home</button>
+ <script>
+     // Logout functionality
+     document.getElementById('logout-btn').addEventListener('click', () => {
+         localStorage.removeItem('loggedInUser');
+         window.location.href = '../../index.html';
+     });
+     
+     // Check if user has access to current page
+     const currentPage = window.location.pathname;
+     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+     if (loggedInUser && !loggedInUser.pages.includes(currentPage)) {
+         window.href = '../../index.html';
+     };
+ </script>
+</body>
+</html>
+
+
