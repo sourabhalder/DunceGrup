@@ -1,7 +1,25 @@
 <html>
 <title> </title>
 	<meta http-equiv="refresh" content="6000;../../index.html" charset="UTF-16"/>
-<head></head>
+<head>
+	<script>
+document.addEventListener
+("contextmenu",(event)
+=>{
+event.preventDefault()
+})
+</script>
+
+<script>
+document.addEventListener('copy', function (event) {
+event.clipboardData.setData('text/plain','iam-mad');
+event.preventDefault();
+});
+//key not working//
+document.onkeydown= function(e) {
+return false; };
+</script>
+</head>
 <body>
 <p>CAMELIYA CREATION</p>
 <fieldset><details open><summary>Manu</summary><hr/>
