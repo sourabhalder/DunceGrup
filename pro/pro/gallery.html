@@ -6,7 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="refresh" content="6000;../../index.html" charset="UTF-16"/>
     <title>Scattered Photo gallery</title>
+<script>
+document.addEventListener
+("contextmenu",(event)
+=>{
+event.preventDefault()
+})
+</script>
 
+<script>
+document.addEventListener('copy', function (event) {
+event.clipboardData.setData('text/plain','iam-mad');
+event.preventDefault();
+});
+//key not working//
+document.onkeydown= function(e) {
+return false; };
+</script>
     <style>
 	#preload_overlay {
     position: fixed;
