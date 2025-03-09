@@ -34,6 +34,32 @@ return false; };
 <center><fieldset color="red" style="text-align:center">
 <p><span style="color:#e74c3c"><span style="background-color:#2ecc71"><span style="font-size:60px"><b><i> CAMELIYA CREATION </span></span></span></p> 
 </fieldset>
+
+<div class="loader">
+    <img src="pro/img/loader-image2.gif" alt="Loader..."> </div>
+<style>
+.loader {
+position: fixed; top: 2px; left: 0px;
+width: 100%; height: 100%;
+background-color: #fff;
+z-index: 1000; display: flex;
+justify-content: center;
+align-items: center;
+animation: fadeOut 10s forwards; }
+.loader img {
+width: 100%; height: 100%; }
+@keyframes fadeOut {
+0% { opacity: 1; }
+100% {opacity: 0;
+visibility: hidden; }
+};
+</style>
+<script>
+setTimeout(function() {
+document.querySelector('.loader').style.display = 'none';
+}, 10000);
+</script>
+	
 <fieldset><details><summary>Menu</summary><hr/>
   <details><summary>Admin login</summary>
 <a href="pro/Admin.htm">E-Certificket</a><br />
